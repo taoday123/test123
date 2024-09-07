@@ -1,0 +1,510 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+
+/* Existing CSS */
+.app-container {
+    font-family: 'Lato', sans-serif; /* Main font for the app */
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+    background: url(./images/trong.png);
+    background-repeat: no-repeat;
+    background-size: 8000px;
+}
+
+/* Box Styles */
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.box {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: #f9f9f9;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Enhanced shadow */
+    flex: 1 1 calc(20% - 20px);
+    max-width: 150px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s; /* Enhanced transitions */
+    border: 1px solid transparent; /* To handle border color on hover */
+    font-family: 'Lato', sans-serif; /* Font for boxes */
+}
+
+.box:hover {
+    background: #e0e0e0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Deeper shadow */
+    transform: scale(1.05);
+    border-color: #007bff; /* Border color on hover */
+}
+
+/* Card Grid Styles */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s; /* Enhanced transitions */
+    aspect-ratio: 1 / 1;
+    max-width: 350px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Even deeper shadow */
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: opacity 0.3s ease; /* Smooth fade effect */
+}
+
+.card-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    background-color: #fff;
+    font-family: 'Lato', sans-serif; /* Font for card content */
+}
+
+/* Card Content Hover Effect */
+.card:hover .card-content {
+    background-color: #f9f9f9; /* Slight change in background color */
+}
+
+/* Card Content Heading */
+.card-content h4 {
+    margin: 0 0 10px;
+    font-size: 22px; /* Slightly larger font size */
+    font-weight: 700; /* Bold weight */
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+}
+
+/* Additional Image Styles */
+.additional-image {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Enhanced shadow */
+}
+
+/* Promotional Boxes Container */
+.promotional-boxes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 30px;
+}
+
+/* Individual Box Styles */
+.promotional-boxes-container .box {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 200px;
+    max-width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s, border 0.3s;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    cursor: pointer; /* Change cursor to pointer */
+    font-family: 'Lato', sans-serif; /* Font for promotional boxes */
+}
+
+/* Box Hover Styles */
+.promotional-boxes-container .box:hover {
+    background-color: #fef7f0;
+    border-color: #ff6f00;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* Box Active Styles */
+.promotional-boxes-container .box.active {
+    border-color: #ff6f00; /* Highlight border on active */
+    background-color: #fef7f0; /* Slightly different background for active */
+}
+
+/* Box Icon */
+.box-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #ff6f00;
+    transition: color 0.3s;
+    font-family: 'Lato', sans-serif; /* Font for icons */
+}
+
+/* Box Content */
+.box-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Box Content Heading */
+.box-content h5 {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: 'Playfair Display', serif; /* Elegant serif font for headings */
+    transition: color 0.3s, transform 0.3s;
+}
+
+/* Box Content Heading Active */
+.promotional-boxes-container .box.active .box-content h5 {
+    color: #8e2de2; /* Change to purple color when active */
+}
+
+/* Cart Styles */
+.cart-icon {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px; /* Slightly larger button */
+    height: 60px;
+    font-size: 28px; /* Larger icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Enhanced shadow */
+    z-index: 1000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.cart-icon:hover {
+    background-color: #0056b3;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4); /* Even deeper shadow */
+}
+
+/* Cart Styles */
+.cart {
+    position: fixed;
+    top: 110px;
+    right: 87px;
+    width: 320px;
+    max-height: 500px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cart.show {
+    display: block;
+}
+
+.cart h3 {
+    margin-top: 0;
+    font-size: 24px; /* Larger font size */
+    color: #333;
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+}
+
+/* Cart List Styles */
+.cart ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px; /* Increased margin for spacing */
+}
+
+/* Remove Button */
+.remove-button {
+    background: none;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.remove-button:hover {
+    color: #c82333; /* Darker red on hover */
+}
+
+/* Clear Button and General Buttons */
+.clear-button,
+button {
+    margin-top: 10px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 58px; /* More rounded corners */
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s; /* Enhanced transitions */
+}
+
+.clear-button:hover,
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 405px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    opacity: 1;
+    transform: scale(1.1); /* Slightly enlarged on hover */
+}
+
+/* Discount Code Styles */
+.discount-code {
+    margin-top: 10px;
+}
+
+.discount-code input {
+    width: 70%;
+    padding: 5px;
+}
+
+.discount-code button {
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+.discount-applied {
+    color: green;
+    margin-top: 10px;
+}
+
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    width: 41%;
+    max-height: 500px; /* Adjust based on your design needs */
+    overflow: hidden;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+}
+
+/* Styles for carousel items */
+.carousel-item img {
+    margin-top: 21px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 500px;
+    transition: opacity 0.5s ease; /* Smooth fade effect */
+}
+
+/* Styles for carousel captions */
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background */
+    color: #fff;
+    border-radius: 8px; /* More rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    font-family: 'Lato', sans-serif; /* Font for captions */
+}
+
+.carousel-caption h3 {
+    margin: 0 0 10px;
+    font-size: 28px; /* Adjusted font size */
+    font-weight: 700; /* Bold weight */
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+}
+
+.carousel-caption p {
+    margin: 5px 0 0;
+    font-size: 20px; /* Slightly larger font size */
+    font-family: 'Lato', sans-serif; /* Clean sans-serif font */
+}
+
+/* Styles for carousel controls */
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    background-color: rgba(0, 0, 0, 0.6); /* Darker background */
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.carousel-control-next-icon.changed, .carousel-control-prev-icon.changed {
+    background-color: rgba(0, 0, 0, 0.8); /* Even darker background */
+    transform: scale(1.1); /* Slightly enlarged */
+}
+
+/* Carousel Indicators */
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 3px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #16a3ce;
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+}
+/* Media Queries to Maintain Current Layout on Mobile */
+
+/* Small devices (phones, less than 576px) */
+@media (max-width: 575px) {
+    .app-container {
+        padding: 10px; /* Adjust padding if necessary */
+    }
+
+    .box-container {
+        flex-direction: column; /* Stack boxes vertically if needed */
+    }
+
+    .box {
+        flex: 1 1 100%; /* Ensure boxes take full width */
+        max-width: 100%; /* Ensure boxes are responsive */
+        height: auto; /* Adjust height if necessary */
+    }
+
+    .card {
+        width: 100%; /* Make cards responsive */
+        max-width: 100%; /* Ensure cards do not exceed screen width */
+        height: auto; /* Adjust height if necessary */
+    }
+
+    .carousel {
+        margin-top: 31px;
+        width: 45%; /* Make carousel responsive */
+    }
+
+    .scroll-to-top {
+        bottom: 20px; /* Adjust position for mobile */
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 24px; /* Adjust font size for mobile */
+    }
+
+    .cart-icon {
+        top: 80px; /* Adjust position for mobile */
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px; /* Adjust font size for mobile */
+    }
+}
+
+/* Additional styles for very small devices (portrait phones, less than 480px) */
+@media (max-width: 479px) {
+    .carousel-caption h3 {
+        font-size: 22px; /* Adjust font size if necessary */
+    }
+
+    .carousel-caption p {
+        font-size: 16px; /* Adjust font size if necessary */
+    }
+
+    .box-icon {
+        font-size: 24px; /* Adjust font size if necessary */
+    }
+
+    .box-content h5 {
+        font-size: 16px; /* Adjust font size if necessary */
+    }
+}
+.reading-indicator {
+    position: fixed;
+    top: 120px;
+    left: 2%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px; /* Kích thước điểm */
+    height: 12px; /* Kích thước điểm */
+    border-radius: 50%;
+    background-color: #ccc; /* Màu điểm không hoạt động */
+    transition: background-color 0.3s;
+    cursor: pointer; /* Thay đổi con trỏ khi hover qua điểm */
+}
+
+.dot.active {
+    background-color: #007bff; /* Màu điểm đang hoạt động */
+}

@@ -1,0 +1,113 @@
+/* styles2.scss */
+
+/* Header Style (if you have one) */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Adjust based on your header height */
+    background-color: #f8f9fa; /* Background color of the header */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000; /* Ensure the header is above other content */
+}
+
+/* Cart Icon Style */
+.cart-icon {
+    position: fixed;
+    top: 60px; /* Position below the header */
+    left: 16px; /* Position from the left edge */
+    background-color: #007bff; /* Blue background for visibility */
+    color: #fff;
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above other elements */
+    transition: background-color 0.3s ease;
+}
+
+.cart-icon:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ff5722; /* Red background for count */
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* Cart Box Style */
+.cart {
+    position: fixed;
+    top: 60px; /* Align with the cart icon */
+    left: 16px;
+    width: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 16px;
+    border-radius: 8px;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+}
+
+.cart.show {
+    display: block;
+}
+
+.cart h3 {
+    color: #007bff; /* Blue color for the heading */
+}
+
+.cart ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cart li {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart .remove-button, .cart .clear-button {
+    background: none;
+    border: none;
+    color: #e74c3c; /* Red color for remove button */
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.cart .clear-button {
+    color: #007bff; /* Blue color for clear button */
+}
+
+.cart button {
+    padding: 8px 16px;
+    background-color: #007bff; /* Blue background for buttons */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cart button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

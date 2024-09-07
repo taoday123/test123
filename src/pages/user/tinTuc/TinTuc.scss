@@ -1,0 +1,42 @@
+.tin-tuc {
+    margin-top: 94px;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin: 111px;
+}
+
+.news-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.news-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+    width: 300px;
+}
+
+.news-card:hover {
+    transform: scale(1.05);
+}
+
+.news-card img {
+    width: 100%;
+    height: auto;
+}
+
+.news-card h3 {
+    margin: 10px;
+    font-size: 1.5em;
+}
+
+.news-card p {
+    margin: 10px;
+    color: #666;
+}

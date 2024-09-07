@@ -1,0 +1,195 @@
+/* Đặt nền cho toàn bộ trang */
+body {
+    background: #eef8ff; /* Màu nền nhẹ nhàng cho toàn bộ trang */
+    margin: 0;
+    padding: 0;
+}
+
+/* Thiết lập kiểu dáng cho phần footer */
+footer {
+    width: 100%; /* Chiều rộng của footer bằng 100% chiều rộng của viewport */
+    
+    bottom: 0; /* Đặt footer ở dưới cùng của trang */
+    background: linear-gradient(to right, #00093c, #2d0b00); /* Nền gradient từ xanh đen đến nâu đỏ */
+    color: #fff; /* Màu chữ trắng */
+    padding: 20px 0; /* Khoảng cách trên và dưới của footer */
+    border-top-left-radius: 125px; /* Bo tròn góc trên bên trái của footer */
+    font-size: 13px; /* Đặt kích thước font */
+    line-height: 20px; /* Khoảng cách giữa các dòng văn bản */
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước tổng thể */
+}
+
+/* Thiết lập kiểu dáng cho hàng chứa các cột trong footer */
+.row1 {
+    width: 90%; /* Chiều rộng của container bằng 90% chiều rộng của viewport */
+    margin: auto; /* Căn giữa container trên trang */
+    display: flex; /* Sử dụng Flexbox để sắp xếp các cột */
+    flex-wrap: wrap; /* Cho phép các cột xuống dòng nếu không đủ không gian */
+    align-items: flex-start; /* Căn các cột theo chiều dọc từ đầu */
+    justify-content: space-between; /* Tạo khoảng cách đều giữa các cột */
+    font-size: 18px; /* Kích thước font chữ trong các cột */
+}
+
+/* Thiết lập kiểu dáng cho các cột trong hàng */
+.col {
+    flex-basis: 24%; /* Các cột chiếm khoảng 24% chiều rộng của hàng, để tạo không gian giữa các cột */
+    padding: 10px; /* Thêm khoảng cách bên trong cột */
+}
+
+/* Thiết lập kiểu dáng cho logo trong footer */
+.col img {
+    width: 100%; /* Đặt chiều rộng logo thành 100% để phù hợp với chiều rộng của cột */
+    max-width: 200px; /* Đặt chiều rộng tối đa cho logo */
+    margin-bottom: 30px; /* Khoảng cách dưới logo */
+}
+
+/* Thiết lập kiểu dáng cho tiêu đề trong các cột */
+.col h3 {
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+    position: relative; /* Định vị tương đối để có thể thêm các yếu tố phụ nếu cần */
+    font-size: 18px; /* Kích thước font chữ tiêu đề */
+}
+
+/* Thiết lập kiểu dáng cho email-id */
+.email-id {
+    border-bottom: 1px solid #ccc; /* Đường gạch ngang dưới phần email */
+    margin: 20px 0; /* Khoảng cách trên và dưới phần email */
+    font-size: 16px; /* Kích thước font chữ */
+}
+
+/* Thiết lập kiểu dáng cho các mục trong danh sách không có dấu đầu dòng */
+ul {
+    padding: 0; /* Loại bỏ padding */
+}
+
+ul li {
+    list-style: none; /* Loại bỏ dấu đầu dòng */
+    margin-bottom: 12px; /* Khoảng cách dưới mỗi mục */
+}
+
+/* Thiết lập kiểu dáng cho các liên kết trong danh sách */
+ul li a {
+    text-decoration: none; /* Bỏ gạch chân dưới liên kết */
+    color: #fff; /* Màu chữ trắng */
+    font-size: 16px; /* Kích thước font chữ */
+}
+
+/* Thiết lập kiểu dáng cho biểu mẫu */
+form {
+    padding-bottom: 15px; /* Khoảng cách dưới biểu mẫu */
+    display: flex; /* Sử dụng Flexbox để sắp xếp các phần tử bên trong biểu mẫu */
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    border-bottom: 1px solid #ccc; /* Đường gạch ngang dưới biểu mẫu */
+}
+
+/* Thiết lập kiểu dáng cho ô nhập liệu trong biểu mẫu */
+form input {
+    width: 80%; /* Chiều rộng của ô nhập liệu bằng 80% chiều rộng của phần tử cha */
+    background: transparent; /* Nền trong suốt */
+    color: #ccc; /* Màu chữ xám nhạt */
+    border: 0; /* Loại bỏ viền */
+    outline: none; /* Loại bỏ đường viền khi được chọn */
+    padding: 5px; /* Thêm khoảng cách bên trong ô nhập liệu */
+}
+
+/* Thiết lập kiểu dáng cho nút trong biểu mẫu */
+form button {
+    background: transparent; /* Nền trong suốt */
+    border: 0; /* Loại bỏ viền */
+    outline: none; /* Loại bỏ đường viền khi được chọn */
+    cursor: pointer; /* Hiển thị con trỏ chuột khi di chuột qua nút */
+    color: whitesmoke; /* Màu chữ trắng sáng */
+    font-size: 1.5em; /* Kích thước font chữ của nút */
+}
+
+/* Thiết lập kiểu dáng cho phần mạng xã hội */
+.mangxahoi {
+    text-align: center; /* Căn giữa nội dung */
+    padding: 0; /* Không thêm khoảng cách bên trong */
+}
+
+.mangxahoi ul {
+    padding: 0; /* Loại bỏ padding */
+}
+
+.mangxahoi li {
+    display: inline-block; /* Hiển thị các mục trong cùng một hàng */
+    text-align: center; /* Căn giữa nội dung trong mỗi mục */
+    padding: 5px; /* Thêm khoảng cách bên trong mỗi mục */
+}
+
+/* Thiết lập kiểu dáng cho liên kết khi di chuột qua */
+a:hover {
+    color: rgb(255, 166, 0); /* Màu chữ khi di chuột qua liên kết */
+}
+
+/* Thiết lập kiểu dáng cho đường gạch ngang gradient */
+.gradient-line {
+    height: 1px; /* Độ dày của đường gạch ngang */
+   
+    margin: 20px 0; /* Khoảng cách trên và dưới của đường gạch ngang */
+}
+
+/* Định dạng văn bản */
+p {
+    margin: 0;
+}
+
+.highlight {
+    text-transform: uppercase; /* Viết hoa toàn bộ chữ */
+    font-weight: bold; /* Đậm chữ */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .row1 {
+        flex-direction: column; /* Sắp xếp các cột theo chiều dọc khi màn hình nhỏ */
+        align-items: center; /* Căn giữa các cột theo chiều ngang */
+    }
+
+    .col {
+        flex-basis: 100%; /* Các cột chiếm 100% chiều rộng của hàng khi màn hình nhỏ */
+        margin-bottom: 131px; /* Khoảng cách dưới mỗi cột */
+    }
+
+    .col img {
+        max-width: 150px; /* Giảm kích thước tối đa của logo khi màn hình nhỏ */
+    }
+
+    form input {
+        width: 70%; /* Giảm chiều rộng của ô nhập liệu để phù hợp với màn hình nhỏ hơn */
+    }
+
+    form button {
+        font-size: 1.2em; /* Giảm kích thước font của nút để phù hợp với màn hình nhỏ hơn */
+    }
+
+    .col h3 {
+        font-size: 16px; /* Giảm kích thước font tiêu đề để phù hợp với màn hình nhỏ */
+    }
+
+    .email-id {
+        font-size: 14px; /* Giảm kích thước font của phần email */
+    }
+
+    ul li a {
+        font-size: 14px; /* Giảm kích thước font của các liên kết trong danh sách */
+    }
+}
+/* Thiết lập kiểu dáng cho các liên kết trong danh sách */
+ul li a {
+    text-decoration: none; /* Bỏ gạch chân dưới liên kết */
+    color: #fff; /* Màu chữ trắng */
+    font-size: 14px; /* Giảm kích thước font chữ */
+    display: block; /* Đặt các liên kết thành khối để dễ điều chỉnh */
+    padding: 10px 0; /* Thêm padding để tạo khoảng cách giữa các mục */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Điều chỉnh kích thước font và padding cho các liên kết trong danh sách */
+    ul li a {
+        font-size: 12px; /* Giảm kích thước font chữ */
+        padding: 8px 0; /* Điều chỉnh padding để phù hợp với màn hình nhỏ */
+    }
+}

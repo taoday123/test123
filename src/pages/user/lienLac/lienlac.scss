@@ -1,0 +1,68 @@
+.contact-container {
+  position: fixed;
+  bottom: 283px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat-phone-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-link,
+.phone-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  font-size: 24px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.chat-link:hover,
+.phone-link:hover {
+  background-color: #0056b3;
+}
+
+.chat-icon,
+.phone-icon {
+  font-size: 24px;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  bottom: 120%; /* Position above the icon */
+  left: -209%;
+  transform: translateX(-50%); /* Center the tooltip */
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip; /* No ellipsis */
+  max-width: 200px; /* Adjust as needed */
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
+  transition: opacity 0.3s, visibility 0.3s;
+  opacity: 0;
+}
+
+.chat-link:hover .tooltip-text,
+.phone-link:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  max-width: none; /* Allow full width to display text */
+  white-space: nowrap; /* Prevent text wrapping */
+}
