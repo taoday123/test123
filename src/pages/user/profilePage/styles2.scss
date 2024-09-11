@@ -428,6 +428,7 @@ button:hover {
 @media (max-width: 575px) {
     .app-container {
         padding: 10px; /* Adjust padding if necessary */
+        background-size: 7000%;
     }
 
     .box-container {
@@ -508,3 +509,91 @@ button:hover {
 .dot.active {
     background-color: #007bff; /* Màu điểm đang hoạt động */
 }
+
+.promotional-boxes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Khoảng cách giữa các hộp */.box {
+        position: relative; /* Để các phần tử con có thể được định vị tuyệt đối */
+        display: block;
+        text-decoration: none;
+        color: inherit; /* Đảm bảo văn bản không bị thay đổi màu sắc */
+        width: 150px; /* Đảm bảo các hộp có cùng kích thước */
+    }
+
+    .box-image {
+        width: 100%;
+        height: auto;
+        visibility: hidden;
+    }
+
+    .box h4 {
+        position: absolute; /* Đặt vị trí của tiêu đề tuyệt đối để nó nằm trên hình ảnh */
+        bottom: 80px; /* Đặt tiêu đề cách đáy của hình ảnh một khoảng cách */
+        left: 50%;
+        transform: translate(-50%, 0); /* Căn giữa tiêu đề theo chiều ngang */
+        color: #000000; /* Xanh dương đậm, sang trọng và dễ đọc */
+ /* Màu chữ */
+        font-size: 16px;
+        padding: 5px; /* Khoảng cách giữa chữ và nền */
+        border-radius: 3px; /* Bo tròn góc của nền */
+        text-align: center; /* Căn giữa văn bản */
+        width: calc(100% - 10px); /* Đảm bảo tiêu đề chiếm hết chiều rộng của hình ảnh */
+        box-sizing: border-box; /* Đảm bảo padding và border được tính trong chiều rộng */
+        z-index: 10; /* Đảm bảo tiêu đề nằm trên hình ảnh */
+        text-transform: uppercase; 
+    }
+}
+
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .box {
+    display: block; /* Đảm bảo thẻ a bao quanh hộp hoạt động như một khối */
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    width: 150px; /* Kích thước cố định cho hộp */
+    height: 200px; /* Kích thước cố định cho hộp */
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none; /* Loại bỏ gạch chân của liên kết */
+    color: inherit; /* Thừa hưởng màu sắc của văn bản từ phần tử cha */
+    background-color: #fff; /* Màu nền của hộp */
+    cursor: pointer; /* Hiển thị con trỏ tay khi hover */
+  }
+  
+  .box img {
+    max-width: 100%; /* Đảm bảo ảnh không vượt quá chiều rộng của hộp */
+    height: auto; /* Đảm bảo tỷ lệ khung hình của ảnh không bị biến dạng */
+    display: block; /* Đảm bảo ảnh không có khoảng cách bên dưới */
+    margin-bottom: 10px; /* Khoảng cách giữa ảnh và tiêu đề */
+  }
+  
+  .box h4 {
+    margin: 0;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.8); /* Nền mờ trắng để dễ đọc hơn */
+    z-index: 1; /* Đảm bảo tiêu đề nằm trên lớp phủ */
+  }
+  
+  .box:hover {
+    background-color: #f5f5f5; /* Thay đổi màu nền khi hover */
+  }
+  
+  .box:hover img {
+    opacity: 0.8; /* Tạo hiệu ứng mờ cho hình ảnh khi hover */
+  }
+  
+  /* Ẩn liên kết chữ "Xem Chi Tiết" */
+  .box-link {
+    display: none;
+  }
+  

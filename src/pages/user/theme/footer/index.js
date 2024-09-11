@@ -10,7 +10,7 @@ const Footer = () => {
                     <div className="col">
                         <img 
                             width="200"  
-                            src="http://localhost:3000/static/media/a.77ccc5c9b66740e1836a.jpg" 
+                            src="http://localhost:3000/static/media/a.76f50542a360e166324f.png" 
                             alt="Hữu Quý Printing Services Logo" 
                         />
                         <hr />

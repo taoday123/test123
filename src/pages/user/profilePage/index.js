@@ -26,19 +26,15 @@ const Slider = ({ slides }) => {
 };
 
 // Thành phần cho Hộp riêng lẻ
-const Box = ({ title, description, icon }) => {
+const Box = ({ title, link, image }) => {
     return (
-        <div className="box">
-            <div className="box-icon">
-                <i className={`fas fa-${icon}`}></i>
-            </div>
-            <div className="box-content">
-                <h5>{title}</h5>
-                <p dangerouslySetInnerHTML={{ __html: description }} />
-            </div>
-        </div>
+        <a href={link} className="box">
+            <img src={image} alt={title} className="box-image" />
+            <h4>{title}</h4>
+        </a>
     );
 };
+
 
 // Thành phần cho Hình ảnh bổ sung
 const AdditionalImage = () => {
@@ -52,17 +48,17 @@ const AdditionalImage = () => {
 // Thành phần cho Hộp Khuyến mại
 const PromotionalBoxes = () => {
     const boxes = [
-        { title: 'Chi Phí cạnh Tranh', description: 'Chi phí tốt nhất thị trường in ấn hiện nay', icon: 'piggy-bank' },
-        { title: 'PrintNow 2h', description: 'In và Giao hàng Trong vòng 2h<br>Trong ngày Chủ nhật', icon: 'telegram-plane' },
-        { title: 'Giao Hàng Miễn Phí', description: 'Áp dụng cho đơn hàng trong nội thành.', icon: 'truck' },
-        { title: 'Kinh Kiểm', description: 'Với hơn 8 năm làm việc nhiều loại dịch vụ.', icon: 'trophy' },
-        { title: 'Chất Lượng', description: 'Đảm bảo theo đúng nhu cầu của khách hàng.', icon: 'bolt' },
+        { title: 'Chi Phí cạnh Tranh' },
+        { title: 'PrintNow 2h' },
+        { title: 'Giao Hàng Miễn Phí' },
+        { title: 'Kinh Kiểm' },
+        { title: 'Chất Lượng' },
     ];
 
     return (
         <div className="promotional-boxes-container">
             {boxes.map((box, index) => (
-                <Box key={index} title={box.title} description={box.description} icon={box.icon} />
+                <Box key={index} title={box.title} link={box.link} image={box.image} />
             ))}
         </div>
     );
@@ -89,6 +85,7 @@ const ProfilePage = () => {
     const [discountCode, setDiscountCode] = useState('');
     const [discountApplied, setDiscountApplied] = useState(false);
     const [discountPercent, setDiscountPercent] = useState(0);
+    const [discountError, setDiscountError] = useState('');
     const [currentSection, setCurrentSection] = useState(0);
 
     const slides = [
@@ -97,7 +94,32 @@ const ProfilePage = () => {
         { image: 'https://via.placeholder.com/800x400', title: 'Slide 3', subTitle: 'Subtitle 3', interval: 3000 },
     ];
 
-    const existingBoxes = Array.from({ length: 20 }, (_, index) => `Box ${index + 1}`);
+    // Danh sách các liên kết cho các hộp
+    const boxLinks = Array.from({ length: 20 }, (_, index) => `/box-${index + 1}`);
+
+    // Tạo danh sách các hộp với liên kết tương ứng
+    const existingBoxes = [
+        { title: 'Box 1', link: '/box-1', image: 'https://tanphat.com.vn/media/product/2986_35760_neverstop_laser_1000w_ha1.jpg?text=Image+1' },
+        { title: 'Box 2', link: '/box-2', image: 'https://via.placeholder.com/150x150?text=Image+2' },
+        { title: 'Box 3', link: '/box-3', image: 'https://via.placeholder.com/150x150?text=Image+3' },
+        { title: 'Box 4', link: '/box-4', image: 'https://via.placeholder.com/150x150?text=Image+4' },
+        { title: 'Box 5', link: '/box-5', image: 'https://via.placeholder.com/150x150?text=Image+5' },
+        { title: 'Box 6', link: '/box-6', image: 'https://via.placeholder.com/150x150?text=Image+6' },
+        { title: 'Box 7', link: '/box-7', image: 'https://via.placeholder.com/150x150?text=Image+7' },
+        { title: 'Box 8', link: '/box-8', image: 'https://via.placeholder.com/150x150?text=Image+8' },
+        { title: 'Box 9', link: '/box-9', image: 'https://via.placeholder.com/150x150?text=Image+9' },
+        { title: 'Box 10', link: '/box-10', image: 'https://via.placeholder.com/150x150?text=Image+10' },
+        { title: 'Box 11', link: '/box-11', image: 'https://via.placeholder.com/150x150?text=Image+11' },
+        { title: 'Box 12', link: '/box-12', image: 'https://via.placeholder.com/150x150?text=Image+12' },
+        { title: 'Box 13', link: '/box-13', image: 'https://via.placeholder.com/150x150?text=Image+13' },
+        { title: 'Box 14', link: '/box-14', image: 'https://via.placeholder.com/150x150?text=Image+14' },
+        { title: 'Box 15', link: '/box-15', image: 'https://via.placeholder.com/150x150?text=Image+15' },
+        { title: 'Box 16', link: '/box-16', image: 'https://via.placeholder.com/150x150?text=Image+16' },
+        { title: 'Box 17', link: '/box-17', image: 'https://via.placeholder.com/150x150?text=Image+17' },
+        { title: 'Box 18', link: '/box-18', image: 'https://via.placeholder.com/150x150?text=Image+18' },
+
+    ];
+    
 
     const cards = [
         { title1: 'Thẻ 1', title2: 'Mô tả 1', image: 'https://via.placeholder.com/300x200', price: '29,99$' },
@@ -167,44 +189,133 @@ const ProfilePage = () => {
 
     const applyDiscountCode = () => {
         let discount = 0;
+        let errorMessage = '';
+
         switch (discountCode.toLowerCase()) {
-            case 'discount10':
-                discount = 10;
-                break;
-            case 'discount20':
+            case 'duongdeptraivn':
                 discount = 20;
                 break;
+            case 'duongdeptraivnn':
+                discount = 50;
+                break;
+            case 'duongdeptraivnnn':
+                discount = 80;
+                break;
+            case 'duongtyphu':
+                discount = 100;
+                break;
             default:
+                errorMessage = 'Mã giảm giá không hợp lệ';
                 discount = 0;
         }
-        setDiscountPercent(discount);
-        setDiscountApplied(discount > 0);
-    };
 
-    const generateInvoice = () => {
-        const invoiceData = cart.map(item => ({
-            title: item.title1,
-            price: item.price,
-            quantity: item.quantity,
-        }));
-        return invoiceData;
+        if (errorMessage) {
+            setDiscountError(errorMessage);
+            setDiscountApplied(false);
+            setDiscountPercent(0);
+        } else {
+            setDiscountError('');
+            setDiscountApplied(true);
+            setDiscountPercent(discount);
+        }
     };
 
     const printInvoice = () => {
-        const invoiceData = generateInvoice();
-        let invoiceHtml = '<h1>Hóa Đơn</h1><table><thead><tr><th>Tên</th><th>Giá</th><th>Số lượng</th></tr></thead><tbody>';
-
-        invoiceData.forEach(item => {
-            invoiceHtml += `<tr><td>${item.title}</td><td>${item.price}</td><td>${item.quantity}</td></tr>`;
-        });
-
-        invoiceHtml += '</tbody></table>';
-        const newWindow = window.open('', '', 'width=600,height=400');
-        newWindow.document.write(invoiceHtml);
+        if (cart.length === 0) {
+            alert('Giỏ hàng trống');
+            return;
+        }
+    
+        const companyName = "Công Ty XYZ";
+        const companyAddress = "123 Đường ABC, TP. HCM, Việt Nam";
+        const companyPhone = "+84 123 456 789";
+        const companyEmail = "contact@xyz.com";
+        const currentDateTime = new Date();
+        const currentDate = currentDateTime.toLocaleDateString();
+        const currentTime = currentDateTime.toLocaleTimeString();
+        const taxRate = 0.1; // Example: 10% tax rate
+        const taxAmount = cart.reduce((sum, item) => sum + parseFloat(item.price.replace('$', '')) * item.quantity, 0) * taxRate;
+        const totalBeforeTax = cart.reduce((sum, item) => sum + parseFloat(item.price.replace('$', '')) * item.quantity, 0);
+        const totalWithTax = totalBeforeTax + taxAmount;
+        const discountedTotal = discountApplied ? totalWithTax * (1 - discountPercent / 100) : totalWithTax;
+    
+        // Generate invoice items
+        const invoiceItems = cart.map(item => `
+            <tr>
+                <td>${item.title1}</td>
+                <td>${item.price}</td>
+                <td>${item.quantity}</td>
+                <td>${(parseFloat(item.price.replace('$', '')) * item.quantity).toFixed(2)}</td>
+            </tr>
+        `).join('');
+    
+        // Construct invoice content
+        const invoiceContent = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Invoice</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+            .invoice-container { width: 80%; margin: auto; padding: 20px; border: 1px solid #ddd; }
+            .invoice-header, .invoice-footer { text-align: center; margin-bottom: 20px; }
+            .invoice-header h1 { margin: 0; }
+            .invoice-details { margin-bottom: 20px; }
+            .invoice-details h2 { margin: 0; font-size: 16px; }
+            .invoice-details p { margin: 5px 0; }
+            .invoice-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+            .invoice-table th, .invoice-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            .invoice-table th { background-color: #f4f4f4; }
+            .thank-you { text-align: center; margin-top: 20px; }
+        </style>
+    </head>
+    <body>
+        <div class="invoice-container">
+            <div class="invoice-header">
+                <h1>Hóa Đơn</h1>
+                <p>${companyName}</p>
+                <p>${companyAddress}</p>
+                <p>Điện thoại: ${companyPhone}</p>
+                <p>Email: ${companyEmail}</p>
+                <p>Ngày: ${currentDate} | Giờ: ${currentTime}</p>
+            </div>
+            <div class="invoice-details">
+                <h2>Chi Tiết Đơn Hàng</h2>
+                <table class="invoice-table">
+                    <thead>
+                        <tr>
+                            <th>Tên Sản Phẩm</th>
+                            <th>Giá</th>
+                            <th>Số Lượng</th>
+                            <th>Tổng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${invoiceItems}
+                    </tbody>
+                </table>
+                <p>Tổng tiền trước thuế: $${totalBeforeTax.toFixed(2)}</p>
+                <p>Thuế (${(taxRate * 100).toFixed(0)}%): $${taxAmount.toFixed(2)}</p>
+                <p>Tổng tiền sau thuế: $${totalWithTax.toFixed(2)}</p>
+                ${discountApplied ? `<p>Giảm giá: ${discountPercent}%</p>` : ''}
+                <h3>Tổng cộng: $${discountedTotal.toFixed(2)}</h3>
+            </div>
+            <div class="thank-you">
+                <p>Xin cám ơn đã mua hàng!</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    `;
+    
+        // Open the invoice in a new window
+        const newWindow = window.open('', '', 'width=800,height=600');
+        newWindow.document.write(invoiceContent);
         newWindow.document.close();
-        newWindow.focus();
-        newWindow.print();
     };
+    
 
     return (
         <div className="app-container">
@@ -212,10 +323,8 @@ const ProfilePage = () => {
             <hr />
             <h2>Danh Mục In Ấn</h2>
             <div className="box-container">
-                {existingBoxes.map((title, index) => (
-                    <div key={index} className="box">
-                        <h4>{title}</h4>
-                    </div>
+                {existingBoxes.map((box, index) => (
+                    <Box key={index} title={box.title} link={box.link} image={box.image} />
                 ))}
             </div>
             <hr />
@@ -234,9 +343,7 @@ const ProfilePage = () => {
             <AdditionalImage />
             <hr />
             <PromotionalBoxes />
-            {/* Reading Indicator */}
             <ReadingIndicator currentSection={currentSection} totalSections={2} />
-            {/* Cart Icon and Cart */}
             <div className="cart-icon" onClick={() => setShowCart(!showCart)}>
                 <FaShoppingCart />
                 {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
@@ -256,6 +363,7 @@ const ProfilePage = () => {
                         <div className="discount-code">
                             <input type="text" value={discountCode} onChange={(e) => setDiscountCode(e.target.value)} placeholder="Nhập mã giảm giá" />
                             <button onClick={applyDiscountCode}>Áp dụng</button>
+                            {discountError && <p className="discount-error">{discountError}</p>}
                             {discountApplied && <p className="discount-applied">Mã giảm giá đã được áp dụng!</p>}
                         </div>
                         <button onClick={handleClearCart} className="clear-button">Xóa Tất cả</button>
