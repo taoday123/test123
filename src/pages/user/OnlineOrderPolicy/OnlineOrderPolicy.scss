@@ -1,0 +1,55 @@
+$primary-color: #3498db;
+$secondary-color: #ffffff;
+$background-color: #f0f4f8;
+$box-shadow-color: rgba(0, 0, 0, 0.2);
+$border-color: #e1e5ea;
+
+.online-order-policy {
+    margin: 120px auto 50px; // Căn giữa và giữ khoảng cách
+    max-width: 900px;
+    padding: 70px;
+    font-family: "Roboto", sans-serif;
+    background-color: $background-color;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px $box-shadow-color;
+
+    h1 {
+        text-align: center;
+        color: $primary-color;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+
+    .section {
+        margin: 20px 0;
+        padding: 20px;
+        background: $secondary-color;
+        border: 1px solid $border-color;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px $box-shadow-color;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px $box-shadow-color;
+        }
+
+        h2 {
+            color: $primary-color;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        ol {
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    }
+}

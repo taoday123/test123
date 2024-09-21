@@ -29,6 +29,12 @@ import Box16 from './pages/user/Box/Box16';
 import Box17 from './pages/user/Box/Box17';
 import Box18 from './pages/user/Box/Box18'; // Import thêm Box component khác
 import { ROUTERS } from './utils/router';
+import DesignEditor from './pages/user/DesignEditor/DesignEditor';
+import ReturnPolicy from './pages/user/ReturnPolicy/ReturnPolicy';
+import WarrantyPolicy from './pages/user/WarrantyPolicy/WarrantyPolicy';
+import PaymentMethods from './pages/user/PaymentMethods/PaymentMethods';
+import ShippingPolicy from './pages/user/ShippingPolicy/ShippingPolicy';
+import OnlineOrderPolicy from './pages/user/OnlineOrderPolicy/OnlineOrderPolicy';
 
 const renderUserRouter = () => {
     const userRouters = [
@@ -135,7 +141,32 @@ const renderUserRouter = () => {
         {
             path: '/product/:id',
             component: <ProductDetail />
-        }
+        },
+        {
+            path: ROUTERS.USER.DESIGNEDITOR,
+            component: <DesignEditor />
+        },
+        {
+            path: ROUTERS.USER.RETURNPOLICY,
+            component: <ReturnPolicy />
+        },
+        {
+            path: ROUTERS.USER.WARRANTYPOLICY,
+            component: <WarrantyPolicy />
+        },
+        {
+            path: ROUTERS.USER.PAYMENTMETHODS,
+            component: <PaymentMethods />
+        },
+        {
+            path: ROUTERS.USER.SHIPPINGPOLICY,
+            component: <ShippingPolicy />
+        },
+        {
+            path: ROUTERS.USER.ONLINEODERPOLICY,
+            component: <OnlineOrderPolicy />
+        },
+
     ];
 
     return (

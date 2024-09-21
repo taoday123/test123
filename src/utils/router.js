@@ -26,7 +26,13 @@ export const ROUTERS = {
         BOX16:'/box-16',
         BOX17:'/box-17',
         BOX18:'/box-18',
-        PRODUCTDETAIL: '/product/:id'
+        PRODUCTDETAIL: '/product/:id',
+        DESIGNEDITOR: '/thiet-ke',
+        RETURNPOLICY:'/chinh-sach-doi-tra-hang',
+        WARRANTYPOLICY:'/chinh-sach-bao-hanh',
+        PAYMENTMETHODS:'/hinh-thuc-thanh-toan',
+        SHIPPINGPOLICY:'/giao-hang-va-van-chuyen',
+        ONLINEODERPOLICY:'/huong-dan-dat-hang-online',
     },
     ADMIN: {
         // Thêm các route cho quản trị nếu cần

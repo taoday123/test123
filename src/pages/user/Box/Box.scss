@@ -7,7 +7,7 @@
       background-color: #f4f4f4;
       border-bottom: 2px solid #ddd;
       text-align: center;
-      position: relative;
+      position: static;
   
       h1 {
         margin: 0;
@@ -166,3 +166,186 @@
     max-width: 90%;
     max-height: 90%;
   }
+
+
+  /* Media queries for responsive design */
+
+/* Mobile devices (up to 600px) */
+@media (max-width: 600px) {
+  .product-detail {
+    .product-header {
+      padding: 10px;
+      margin-top: 150px; /* Giảm khoảng cách từ header cũ trên màn hình nhỏ */
+  
+      h1 {
+        font-size: 1.8em; /* Giảm kích thước font để phù hợp với màn hình nhỏ */
+      }
+  
+      p {
+        font-size: 1em; /* Giảm kích thước font */
+      }
+    }
+  
+    .product-slider {
+      margin: 10px;
+  
+      .slide img {
+        object-fit: contain; /* Đảm bảo hình ảnh không bị cắt */
+      }
+    }
+  
+    .product-info {
+      flex-direction: column; /* Sắp xếp theo chiều dọc trên màn hình nhỏ */
+      align-items: center; /* Căn giữa nội dung */
+      padding: 10px;
+  
+      .info {
+        max-width: 100%; /* Chiếm toàn bộ chiều rộng */
+        padding-right: 0; /* Xóa bỏ padding bên phải */
+      }
+  
+      .product-image {
+        max-width: 100%; /* Chiếm toàn bộ chiều rộng */
+        margin-top: 10px; /* Thêm khoảng cách trên ảnh sản phẩm */
+      }
+    }
+  
+    .customer-reviews {
+      padding: 10px;
+  
+      .review {
+        padding: 5px 0;
+      }
+  
+      h3 {
+        font-size: 1em; /* Giảm kích thước font */
+      }
+    }
+  
+    .contact-seller {
+      padding: 10px;
+  
+      form {
+        .form-group {
+          margin-bottom: 10px;
+  
+          input,
+          textarea {
+            padding: 8px;
+          }
+  
+          textarea {
+            resize: vertical;
+          }
+        }
+  
+        button {
+          padding: 8px 12px;
+        }
+      }
+    }
+  }
+  
+  /* Tablet devices (between 601px and 1024px) */
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .product-detail {
+      .product-header {
+        padding: 15px;
+        margin-top: 75px; /* Điều chỉnh khoảng cách từ header cũ cho màn hình tablet */
+  
+        h1 {
+          font-size: 2.2em;
+        }
+  
+        p {
+          font-size: 1.1em;
+        }
+      }
+  
+      .product-slider {
+        margin: 15px auto;
+  
+        .slide img {
+          object-fit: contain;
+        }
+      }
+  
+      .product-info {
+        flex-direction: row; /* Hiển thị theo chiều ngang */
+        padding: 15px;
+  
+        .info {
+          max-width: 70%; /* Tăng chiều rộng tối đa của phần thông tin */
+        }
+  
+        .product-image {
+          max-width: 30%; /* Tăng chiều rộng tối đa của ảnh sản phẩm */
+        }
+      }
+  
+      .customer-reviews {
+        padding: 15px;
+  
+        .review {
+          padding: 8px 0;
+        }
+  
+        h3 {
+          font-size: 1.1em;
+        }
+      }
+  
+      .contact-seller {
+        padding: 15px;
+  
+        form {
+          .form-group {
+            margin-bottom: 12px;
+  
+            input,
+            textarea {
+              padding: 9px;
+            }
+          }
+  
+          button {
+            padding: 9px 14px;
+          }
+        }
+      }
+    }
+  }
+  
+  /* Desktop devices (1025px and up) */
+  @media (min-width: 1025px) {
+    .product-detail {
+      .product-slider {
+        margin: 20px auto;
+  
+        .slide img {
+          object-fit: cover;
+        }
+      }
+  
+      .product-info {
+        padding: 20px;
+  
+        .info {
+          max-width: 60%; /* Giữ nguyên chiều rộng tối đa cho phần thông tin */
+        }
+  
+        .product-image {
+          max-width: 35%; /* Giữ nguyên chiều rộng tối đa cho ảnh sản phẩm */
+        }
+      }
+  
+      .customer-reviews {
+        padding: 20px;
+      }
+  
+      .contact-seller {
+        padding: 20px;
+      }
+    }
+  }
+}

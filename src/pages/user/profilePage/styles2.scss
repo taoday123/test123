@@ -15,6 +15,7 @@
 
 /* Box Styles */
 .box-container {
+    align-content: space-around;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -344,6 +345,7 @@ button:hover {
 
 /* Carousel Styles */
 .carousel {
+    margin-top: 120px;
     position: relative;
     width: 41%;
     max-height: 500px; /* Adjust based on your design needs */
@@ -351,12 +353,12 @@ button:hover {
     padding-top: 60px;
     padding-bottom: 60px;
     border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+    box-shadow: 0 8px 24px rgb(0 0 0 / 39%);
 }
 
 /* Styles for carousel items */
 .carousel-item img {
-    margin-top: 21px;
+   
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -448,8 +450,9 @@ button:hover {
     }
 
     .carousel {
+        left: 19px;
         margin-top: 31px;
-        width: 45%; /* Make carousel responsive */
+        width: 91%; /* Make carousel responsive */
     }
 
     .scroll-to-top {
@@ -558,9 +561,10 @@ button:hover {
     border: 1px solid #ddd;
     padding: 10px;
     margin: 10px;
-    width: 150px; /* Kích thước cố định cho hộp */
+     /* Kích thước cố định cho hộp */
     height: 200px; /* Kích thước cố định cho hộp */
     text-align: center;
+    
     overflow: hidden;
     position: relative;
     text-decoration: none; /* Loại bỏ gạch chân của liên kết */

@@ -1,0 +1,90 @@
+/* DesignEditor.scss */
+
+.design-editor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  
+  .controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .preview {
+    border: 1px solid #ccc;
+    padding: 10px;
+    position: relative;
+    background-color: #f9f9f9;
+    width: 360px; /* Adjusted width for smaller preview */
+    height: 640px; /* Adjusted height for smaller preview */
+    overflow: hidden;
+  }
+  
+  .draggable-image, .draggable-text {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    color: inherit;  // Để kế thừa màu từ các thuộc tính inline
+    font-family: inherit; // Để kế thừa font từ các thuộc tính inline
+  }
+  
+  .remove-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    font-size: 10px;
+  }
+  
+  textarea {
+    color: inherit; 
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  @media (max-width: 768px) {
+    .design-editor {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  
+    .controls {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+  
+    .preview {
+      width: 90%;        /* Giảm chiều rộng để tạo khoảng cách bên ngoài */
+      max-width: 360px;  /* Đặt kích thước tối đa để không quá lớn */
+      height: auto;
+      aspect-ratio: 9 / 16; /* Giữ tỷ lệ để không bị méo mó */
+      padding: 5px;
+      box-sizing: border-box;
+    }
+  
+    .remove-button {
+      font-size: 10px;  /* Giảm kích thước nút để phù hợp hơn */
+      padding: 4px;
+      top: 5px;
+      right: 5px;
+    }
+  
+    textarea {
+      font-size: 14px;  /* Giữ kích thước chữ dễ đọc trên màn hình nhỏ */
+    }
+  }
+  

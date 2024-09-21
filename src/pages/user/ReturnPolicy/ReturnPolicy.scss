@@ -1,0 +1,65 @@
+// src/ReturnPolicy.scss
+
+$primary-color: #3498db;
+$secondary-color: #ffffff;
+$background-color: #f0f4f8;
+$box-shadow-color: rgba(0, 0, 0, 0.2);
+$border-color: #e1e5ea;
+
+.return-policy {
+  margin: 120px auto 50px; // Căn giữa và giữ khoảng cách
+    
+    padding: 70px;
+    margin-top: 120px;
+    margin-bottom: 50px;
+    max-width: 900px;
+    
+    font-family: "Roboto", sans-serif;
+    background-color: #f0f4f8;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+   
+    
+  h1 {
+    text-align: center;
+    color: $primary-color;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+
+  .section {
+    margin: 20px 0;
+    padding: 20px;
+    background: $secondary-color;
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px $box-shadow-color;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px $box-shadow-color;
+    }
+
+    h2 {
+      color: $primary-color;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+    }
+
+    ul li, ol li {
+      margin-bottom: 10px;
+    }
+  }
+
+  p {
+    line-height: 1.8;
+    font-size: 1.1em;
+    margin-top: 20px;
+  }
+}
